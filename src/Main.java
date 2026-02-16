@@ -5,7 +5,6 @@ import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class Main {
-    private static final String API_KEY = "f497096c7eec037b02b14c514622b2f7";
     private static final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather?q=";
 
     public static void main(String[] args) {
@@ -14,7 +13,7 @@ public class Main {
         System.out.print("Enter a city name: ");
         String city = scanner.nextLine();
 
-        String urlString = BASE_URL + city.replace(" ", "%20") + "&APPID=" + API_KEY + "&units=metric";
+        String urlString = BASE_URL + city.replace(" ", "%20") + "&APPID=" + ApiKey.API_KEY + "&units=metric";
 
         try (HttpClient client = HttpClient.newHttpClient()) {
             HttpRequest request = HttpRequest.newBuilder()
